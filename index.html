@@ -85,11 +85,23 @@
       transform: rotate(360deg);
     }
     footer {
+      transition: background-color 0.3s, color 0.3s;
+    }
+    body:not(.dark-mode) footer {
+      background-color: #ffffff;
+      color: #000000;
+    }
+    .dark-mode footer {
       background-color: #1a202c;
       color: #ffffff;
     }
     footer a {
       transition: color 0.3s ease;
+    }
+    body:not(.dark-mode) footer a {
+      color: #000000;
+    }
+    .dark-mode footer a {
       color: #68d391;
     }
     footer a:hover {
