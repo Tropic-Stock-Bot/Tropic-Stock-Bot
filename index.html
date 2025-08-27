@@ -3,28 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tropic Stock Bot - Info</title>
+  <title>Tropic Stock Bot - Home</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="light-mode">
-  <header>
+  <header class="navbar">
     <nav>
-      <h1>Tropic Stock Bot</h1>
-      <div>
+      <h1 class="logo">🌱 Tropic Stock Bot</h1>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
         <a href="terms.html">Terms of Service</a>
         <a href="privacy.html">Privacy Policy</a>
-        <button id="theme-toggle">Toggle Theme</button>
+        <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
       </div>
     </nav>
   </header>
 
   <main class="container">
-    <section class="card">
+    <section class="hero">
       <h2>Welcome to Tropic Stock Bot</h2>
-      <p>This site hosts the Terms of Service and Privacy Policy for the Tropic Stock Bot For Grow A Garden (TSBFGAG).</p>
-      <p>Please review the documents linked above before using the Bot.</p>
+      <p>A Discord bot that helps you track stocks, weather, merchants, and more in <strong>Grow a Garden</strong>.</p>
+    </section>
+
+    <section class="card">
+      <h3>Our Policies</h3>
+      <p>Please review our policies before using the Bot:</p>
+      <ul>
+        <li><a href="terms.html">📜 Terms of Service</a></li>
+        <li><a href="privacy.html">🔒 Privacy Policy</a></li>
+      </ul>
     </section>
   </main>
+
+  <footer>
+    <p>&copy; 2025 Tropic Stock Bot | <a href="https://discord.gg/growabiggarden" target="_blank">Join Support Server</a></p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
