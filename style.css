@@ -1,16 +1,10 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.3s, color 0.3s;
-}
-
+/* Theme Variables */
 :root {
   --bg: #ffffff;
   --text: #222;
   --card-bg: #f5f5f5;
   --link: #0077cc;
+  --nav-bg: #fdfdfd;
 }
 
 body.dark-mode {
@@ -18,44 +12,60 @@ body.dark-mode {
   --text: #eee;
   --card-bg: #2a2a2a;
   --link: #4da6ff;
+  --nav-bg: #252525;
 }
 
-header {
-  background: var(--card-bg);
-  padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+/* Global */
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  line-height: 1.6;
 }
 
+/* Navbar */
+.navbar {
+  background: var(--nav-bg);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-nav a {
+.logo { margin: 0; }
+.nav-links a {
   margin: 0 10px;
   text-decoration: none;
   color: var(--link);
 }
-
-nav a.active {
+.nav-links a.active {
   font-weight: bold;
   border-bottom: 2px solid var(--link);
 }
-
-button {
-  padding: 6px 12px;
+#theme-toggle {
+  background: none;
   border: none;
-  border-radius: 6px;
+  font-size: 1.2rem;
   cursor: pointer;
 }
 
+/* Layout */
 .container {
   max-width: 900px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
-
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
 .card {
   background: var(--card-bg);
   padding: 1.5rem;
@@ -63,7 +73,14 @@ button {
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
+h1,h2,h3 { margin-top: 0; }
+ul { padding-left: 1.2rem; }
 
-h1, h2, h3 {
-  margin-top: 0;
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  background: var(--nav-bg);
+  font-size: 0.9rem;
 }
