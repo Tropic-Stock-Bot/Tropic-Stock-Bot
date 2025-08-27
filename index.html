@@ -3,42 +3,248 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tropic Stock Bot - Home</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Tropic Stock Bot - Terms & Privacy</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .dark-mode {
+      background-color: #1a202c;
+      color: #ffffff;
+    }
+    .dark-mode .card,
+    .dark-mode .quick-links-card {
+      background-color: #2d3748;
+      color: #ffffff;
+    }
+    .dark-mode .quick-links-card a,
+    .dark-mode a {
+      color: #68d391;
+    }
+    .dark-mode .quick-links-card a:hover,
+    .dark-mode a:hover {
+      color: #38a169;
+    }
+    .navbar {
+      background: linear-gradient(to right, #38a169, #68d391);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .nav-links button {
+      transition: all 0.3s ease;
+    }
+    .nav-links button:hover {
+      background-color: #2f855a;
+      color: #ffffff;
+    }
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .card,
+    .quick-links-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s, color 0.3s;
+      background-color: #ffffff;
+      color: #000000;
+    }
+    .card:hover,
+    .quick-links-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+    .hero {
+      background: url('https://source.unsplash.com/random/1600x900/?tropical') no-repeat center center;
+      background-size: cover;
+      border-radius: 1rem;
+      padding: 3rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      transition: color 0.3s;
+    }
+    body:not(.dark-mode) .hero {
+      color: #000000;
+    }
+    .dark-mode .hero {
+      color: #ffffff;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .theme-toggle {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      color: #ffffff;
+    }
+    .theme-toggle:hover {
+      transform: rotate(360deg);
+    }
+    footer {
+      background-color: #1a202c;
+      color: #ffffff;
+    }
+    footer a {
+      transition: color 0.3s ease;
+      color: #68d391;
+    }
+    footer a:hover {
+      color: #38a169;
+    }
+    a {
+      transition: color 0.3s ease;
+      color: #000000;
+    }
+    a:hover {
+      color: #38a169;
+    }
+  </style>
 </head>
-<body class="light-mode">
-  <header class="navbar">
-    <nav>
-      <h1 class="logo">🌱 Tropic Stock Bot</h1>
-      <div class="nav-links">
-        <a href="index.html" class="active">Home</a>
-        <a href="terms.html">Terms of Service</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
+<body class="bg-gray-100 text-black font-sans">
+  <header class="navbar py-4">
+    <nav class="container mx-auto flex justify-between items-center px-6">
+      <h1 class="logo text-2xl font-bold text-white">🌱 Tropic Stock Bot</h1>
+      <div class="nav-links flex space-x-4">
+        <button class="tab-btn active px-4 py-2 rounded-md text-white font-semibold" data-tab="home">Home</button>
+        <button class="tab-btn px-4 py-2 rounded-md text-white font-semibold" data-tab="terms">Terms of Service</button>
+        <button class="tab-btn px-4 py-2 rounded-md text-white font-semibold" data-tab="privacy">Privacy Policy</button>
+        <button id="theme-toggle" aria-label="Toggle Theme" class="theme-toggle">🌙</button>
       </div>
     </nav>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <h2>Welcome to Tropic Stock Bot</h2>
-      <p>A Discord bot that helps you track stocks, weather, merchants, and more in <strong>Grow a Garden</strong>.</p>
+  <main class="container mx-auto px-6 py-12">
+    <section id="home" class="tab-content active">
+      <div class="hero text-center mb-12">
+        <h2 class="text-4xl font-extrabold mb-4">Welcome to Tropic Stock Bot</h2>
+        <p class="text-lg">A powerful Discord bot for tracking stock alerts, weather, merchants, and more in <strong>Grow a Garden</strong>.</p>
+      </div>
+      <div class="quick-links-card card p-6 rounded-lg shadow-md">
+        <h3 class="text-2xl font-semibold mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><button class="tab-btn-link hover:underline" data-tab="terms">📜 Terms of Service</button></li>
+          <li><button class="tab-btn-link hover:underline" data-tab="privacy">🔒 Privacy Policy</button></li>
+        </ul>
+      </div>
     </section>
 
-    <section class="card">
-      <h3>Our Policies</h3>
-      <p>Please review our policies before using the Bot:</p>
-      <ul>
-        <li><a href="terms.html">📜 Terms of Service</a></li>
-        <li><a href="privacy.html">🔒 Privacy Policy</a></li>
-      </ul>
+    <section id="terms" class="tab-content">
+      <div class="card p-8 rounded-lg shadow-md mb-6">
+        <h2 class="text-3xl font-bold mb-4">Terms of Service</h2>
+        <p class="text-sm text-gray-600 mb-4"><strong>Last Updated:</strong> August 27, 2025</p>
+        <p>By using Tropic Stock Bot For Grow A Garden (TSBFGAG) on Discord, you agree to these Terms.</p>
+      </div>
+      <div class="card p-8 rounded-lg shadow-md mb-6">
+        <h3 class="text-xl font-semibold mb-2">1. Acceptance of Terms</h3>
+        <p>You must be 13+ to use the Bot. Under 18 requires parental permission. Use of the Bot means you agree to these Terms and Discord’s Terms of Service.</p>
+      </div>
+      <div class="card p-8 rounded-lg shadow-md mb-6">
+        <h3 class="text-xl font-semibold mb-2">2. Bot Functionality & Use</h3>
+        <p>Permitted: Stock alerts, history queries, weather info, and server setup.<br>Prohibited: Spam, harassment, reverse engineering, impersonation, overloading, or unauthorized data collection.<br>The Bot relies on third-party APIs — accuracy not guaranteed.</p>
+      </div>
+      <div class="card p-8 rounded-lg shadow-md mb-6">
+        <h3 class="text-xl font-semibold mb-2">3. User Content & Settings</h3>
+        <p>You are responsible for data/config you provide. Alerts depend on your setup; we’re not liable for missed pings or errors.</p>
+      </div>
+      <div class="card p-8 rounded-lg shadow-md mb-6">
+        <h3 class="text-xl font-semibold mb-2">4. Intellectual Property</h3>
+        <p>All Bot code, logo, and features belong to the founders. You get a limited, non-exclusive license to use it ethically.</p>
+      </div>
+      <div class="card p-8 rounded-lg shadow-md mb-6">
+        <h3 class="text-xl font-semibold mb-2">5. Disclaimer of Warranties</h3>
+        <p>Service is provided “as is” — we don’t guarantee uptime, accuracy, or bug-free operation.</p>
+      </div>
+      <div class="card p-8 rounded-lg shadow-md mb-6">
+        <h3 class="text-xl font-semibold mb-2">6. Limitation of Liability</h3>
+        <p>We are not liable for damages. Our total liability = $0.</p>
+      </div>
+      <div class="card p-8 rounded-lg shadow-md mb-6">
+        <h3 class="text-xl font-semibold mb-2">7. Indemnification</h3>
+        <p>You agree to hold us harmless from claims/losses caused by your use of the Bot.</p>
+      </div>
+      <div class="card p-8 rounded-lg shadow-md mb-6">
+        <h3 class="text-xl font-semibold mb-2">8. Termination</h3>
+        <p>We can suspend or terminate access without notice for any reason, especially ToS violations.</p>
+      </div>
+      <div class="card p-8 rounded-lg shadow-md mb-6">
+        <h3 class="text-xl font-semibold mb-2">9. Changes</h3>
+        <p>We may update these Terms. New versions replace old ones.</p>
+      </div>
+      <div class="card p-8 rounded-lg shadow-md mb-6">
+        <h3 class="text-xl font-semibold mb-2">10. Governing Law</h3>
+        <p>These Terms are governed by the laws of the United Kingdom.</p>
+      </div>
+      <div class="card p-8 rounded-lg shadow-md mb-6">
+        <h3 class="text-xl font-semibold mb-2">11. Contact</h3>
+        <p>Questions? Reach us at <a href="https://discord.gg/growabiggarden" target="_blank" class="hover:underline">discord.gg/growabiggarden</a></p>
+      </div>
+    </section>
+
+    <section id="privacy" class="tab-content">
+      <div class="card p-8 rounded-lg shadow-md mb-6">
+        <h2 class="text-3xl font-bold mb-4">Privacy Policy</h2>
+        <p class="text-sm text-gray-600 mb-4"><strong>Last Updated:</strong> August 27, 2025</p>
+        <p>This Privacy Policy explains how Tropic Stock Bot For Grow A Garden (“TSBFGAG”) collects, uses, and protects your data when you use the Bot on Discord.</p>
+      </div>
+      <div class="card p-8 rounded-lg shadow-md mb-6">
+        <h3 class="text-xl font-semibold mb-2">1. Information We Collect</h3>
+        <p>We store Discord IDs, server/channel/message IDs, custom settings, and public game data. No sensitive data is collected.</p>
+      </div>
+      <div class="card p-8 rounded-lg shadow-md mb-6">
+        <h3 class="text-xl font-semibold mb-2">2. How We Use Info</h3>
+        <p>Data enables alerts, settings management, history logs, and spam prevention. Stored locally in SQLite, never for ads.</p>
+      </div>
+      <div class="card p-8 rounded-lg shadow-md mb-6">
+        <h3 class="text-xl font-semibold mb-2">3. Sharing Data</h3>
+        <p>We don’t sell your info. Shared only with Discord, third-party APIs, or if required by law.</p>
+      </div>
+      <div class="card p-8 rounded-lg shadow-md mb-6">
+        <h3 class="text-xl font-semibold mb-2">4. Security</h3>
+        <p>We use reasonable safeguards but cannot guarantee 100% security.</p>
+      </div>
+      <div class="card p-8 rounded-lg shadow-md mb-6">
+        <h3 class="text-xl font-semibold mb-2">5. Your Choices</h3>
+        <p>Manage or delete your data with bot commands. Removing the Bot = revoking consent.</p>
+      </div>
+      <div class="card p-8 rounded-lg shadow-md mb-6">
+        <h3 class="text-xl font-semibold mb-2">6. Children</h3>
+        <p>Not for users under 13. If we find such data, it will be deleted.</p>
+      </div>
+      <div class="card p-8 rounded-lg shadow-md mb-6">
+        <h3 class="text-xl font-semibold mb-2">7. Changes</h3>
+        <p>We may update this Privacy Policy. Updates will appear here.</p>
+      </div>
+      <div class="card p-8 rounded-lg shadow-md mb-6">
+        <h3 class="text-xl font-semibold mb-2">8. Contact</h3>
+        <p>Questions? <a href="https://discord.gg/growabiggarden" target="_blank" class="hover:underline">Join our Discord</a></p>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Tropic Stock Bot | <a href="https://discord.gg/growabiggarden" target="_blank">Join Support Server</a></p>
+  <footer class="text-center py-6">
+    <p>&copy; 2025 Tropic Stock Bot | <a href="https://discord.gg/growabiggarden" target="_blank">Support Server</a></p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    document.querySelectorAll('.tab-btn, .tab-btn-link').forEach(button => {
+      button.addEventListener('click', () => {
+        const tab = button.getAttribute('data-tab');
+        document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        document.getElementById(tab).classList.add('active');
+        button.classList.add('active');
+      });
+    });
+
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      themeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    });
+  </script>
 </body>
 </html>
